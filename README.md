@@ -10,13 +10,13 @@ Download the repository and use the following command:
 ## Algorithm
 
 ### Finder Function
-1) The code looks for first names in a string. It compares against a list of the most popular baby names by year (1880 onwards). Text files from the social security database were turned into a proper data set which can be queried.
+1) The code looks for first names in a string. It compares against a list of the most popular baby names by year (1920-2017). Text files from the social security database were turned into a proper data set which can be queried.
 
 2) The code then looks for last names in the same string, notes their positions, and applies the rank from data from the US Census Bureau gathered in 2010.
 
 3) The algorithm matches the distance between the two. It ranks each name for probability based on popularity as well as distance between the two words.
 
-When found, the names can be further manipulated with the nameparser Python Library (installed separately).
+When found, the names can be further manipulated with the nameparser Python Library.
 
 ### Guessing Functions
 
