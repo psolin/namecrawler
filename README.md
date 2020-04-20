@@ -5,9 +5,8 @@ A Python library for finding names in strings and approximating other data.
 ## Getting Started
 Download the repository and use the following command:
 
-```
-sudo python setup.py install
-```
+    sudo python setup.py install
+
 ## Algorithm
 
 ### Finder Function
