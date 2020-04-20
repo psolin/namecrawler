@@ -1,4 +1,4 @@
-# namecrawler
+# namecrawler beta 1.0
 
 A Python library for finding names in strings and approximating other data.
 
@@ -48,7 +48,7 @@ The library is not perfect; it misses unique names, those with abbreviations, an
 The code is generally slow since it has to do a great deal of lookups, and has the potential to be optimized further.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 * Social Security Administration
