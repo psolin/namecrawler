@@ -3,9 +3,11 @@
 A Python library for finding names in strings and approximating other data.
 
 ## Getting Started
-Download the repository and use the following command:
+Install the requirements:
 
-    sudo python setup.py install
+    >>> script here
+
+Since the database reaches the file size limit of Github, make sure to unzip it before continuing.
 
 ## Algorithm
 
@@ -16,32 +18,27 @@ Download the repository and use the following command:
 
 3) The algorithm matches the distance between the two. It ranks each name for probability based on popularity as well as distance between the two words.
 
-When found, the names can be further manipulated with the nameparser Python Library.
+When found, the names can be further manipulated with the nameparser Python library.
 
 ### Guessing Functions
 
 #### Age
-
 To guess the age of one person is difficult; when used in a large dataset, you could potentially guess average age of everyone in it much more accurately.
 
 #### Race
-
 The probabilities for race come from the US Census Bureau.
 
 #### Sex
-
 This is compared by the rankings of each instance of the name, and is shown as a percentage.
 
 ## Use
-
 Example code:
 
 ```
 goes here
 ```
 
-## Issues
-
+## Limitations
 Since the data comes from US Social Security Administration and the US Census Bureau, it will have a hard time with non-US names, and may not find them at all. As more data sources become available, they will be integrated into the library. Right now, all data is US-specific.
 
 There may be a way to normalize age distribution based on data showing what years most people have been alive.
@@ -51,10 +48,8 @@ The library is not perfect; it misses unique names, those with abbreviations, an
 The code is generally slow since it has to do a great deal of lookups, and has the potential to be optimized further.
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
-
-* Social Security
+* Social Security Administration
 * US Census Bureau
