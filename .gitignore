@@ -2,5 +2,5 @@
 data/social security - first/.DS_Store
 .DS_Store
 *.icloud
-data/names.sqlite
-data/social security - first/.DS_Store
+namecrawler/data/__MACOSX/._names.sqlite
+namecrawler/data/names.sqlite
