@@ -3,6 +3,7 @@ import zipfile
 import os.path
 import sqlite3
 import operator
+from datetime import date
 
 
 def database_unzip():
@@ -18,15 +19,17 @@ def name_parsing(name_str):
     return name_processed
 
 
-def race(last_name):
+def race(name_str):
     database_unzip()
-    last_name = last_name.upper()
+    last_name = name_parsing(name_str).last.upper()
     conn = sqlite3.connect('data/names.sqlite')
     cursor = conn.cursor()
     cursor.execute(
         'SELECT pctwhite, pctblack, pctapi, pctaian, pct2prace, pcthispanic FROM surnames WHERE name=?', [last_name])
     try:
         race = cursor.fetchone()
+        cursor.close()
+        conn.close()
         race_prob = {}
         race_prob['White'] = race[0]
         race_prob['Black'] = race[1]
@@ -35,14 +38,27 @@ def race(last_name):
         race_prob['Two or More Races'] = race[4]
         race_prob['Hispanic'] = race[5]
         max_race = max(race_prob.items(), key=operator.itemgetter(1))[0]
-        return max_race, race_prob[max_race]
+        return max_race
     except:
         pass
 
 
-def age(first_name):
+def age(name_str):
     database_unzip()
-    return 0
+    first_name = name_parsing(name_str).first.capitalize()
+    conn = sqlite3.connect('data/names.sqlite')
+    cursor = conn.cursor()
+    cursor.execute(
+        'SELECT year, occurences FROM first WHERE first=?', [first_name])
+    try:
+        age_lookup = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        sorted(age_lookup,key=lambda x: x[0], reverse=False)[0]
+        age = int(date.today().year) - int(age_lookup[-1:][0][0])
+        return age
+    except:
+        pass
 
 
 def sex(first_name):
