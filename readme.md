@@ -23,10 +23,10 @@ When found, the names can be further manipulated with the nameparser Python libr
 ### Probability Functions
 
 #### Age
-Age is calculated by taking the most occurences of that name in a given year and subtracting the current year from it/
+Age is calculated by taking the most occurences of that name in a given year and subtracting the current year from it. The function will return the age and the number of occurences for the year with the highest value.
 
 #### Race
-The probabilities for race come from the US Census Bureau last names and are simply looked up. Thanks to FiveThirtyEight for compiling this data and making it available.
+The probabilities for race come from the US Census Bureau last names and are simply looked up. Thanks to FiveThirtyEight for compiling this data and making it available. The function will return the race with the probability.
 
 #### Sex
 This is found by looking up a first name, and seeing which of M/F is higher in rank.

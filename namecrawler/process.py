@@ -38,7 +38,7 @@ def race(name_str):
         race_prob['Two or More Races'] = race[4]
         race_prob['Hispanic'] = race[5]
         max_race = max(race_prob.items(), key=operator.itemgetter(1))[0]
-        return max_race
+        return max_race, race_prob[max_race] + "%"
     except:
         pass
 
@@ -56,12 +56,12 @@ def age(name_str):
         conn.close()
         sorted(age_lookup,key=lambda x: x[0], reverse=False)[0]
         age = int(date.today().year) - int(age_lookup[-1:][0][0])
-        return age
+        return age, age_lookup[-1:][0][1]
     except:
         pass
 
 
-def sex(first_name):
+def sex(name_str):
     database_unzip()
     return 0
 
