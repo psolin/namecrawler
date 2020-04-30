@@ -49,14 +49,14 @@ def age(name_str):
     conn = sqlite3.connect('data/names.sqlite')
     cursor = conn.cursor()
     cursor.execute(
-        'SELECT year, occurences FROM first WHERE first=?', [first_name])
+        'SELECT year, max(occurences) FROM first WHERE first=?', [first_name])
     try:
-        age_lookup = cursor.fetchall()
+        age_lookup = cursor.fetchone()
         cursor.close()
         conn.close()
-        sorted(age_lookup,key=lambda x: x[0], reverse=False)[0]
-        age = int(date.today().year) - int(age_lookup[-1:][0][0])
-        return age, age_lookup[-1:][0][1]
+        print(age_lookup[0])
+        age = int(date.today().year) - int(age_lookup[0])
+        return age, int(age_lookup[0])
     except:
         pass
 
