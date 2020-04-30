@@ -1,13 +1,13 @@
-# namecrawler beta 1.0
+# namecrawler beta
 
 A Python library for finding names in strings and approximating other data.
 
 ## Getting Started
 Install the requirements:
 
-    >>> script here
+    >>> pip install -r requirements.txt
 
-Since the database reaches the file size limit of Github, make sure to unzip it before continuing.
+Since the database  reaches the file size limit of Github, the script will make an attempt to unzip with every function, if the database was not unzipped previously.
 
 ## Algorithm
 
@@ -20,22 +20,22 @@ Since the database reaches the file size limit of Github, make sure to unzip it 
 
 When found, the names can be further manipulated with the nameparser Python library.
 
-### Guessing Functions
+### Probability Functions
 
 #### Age
-To guess the age of one person is difficult; when used in a large dataset, you could potentially guess average age of everyone in it much more accurately.
+Age is calculated by taking the most occurences of that name in a given year and subtracting the current year from it/
 
 #### Race
-The probabilities for race come from the US Census Bureau.
+The probabilities for race come from the US Census Bureau last names and are simply looked up. Thanks to FiveThirtyEight for compiling this data and making it available.
 
 #### Sex
-This is compared by the rankings of each instance of the name, and is shown as a percentage.
+This is found by looking up a first name, and seeing which of M/F is higher in rank.
 
 ## Use
 Example code:
 
 ```
-goes here
+
 ```
 
 ## Limitations
@@ -48,8 +48,8 @@ The library is not perfect; it misses unique names, those with abbreviations, an
 The code is generally slow since it has to do a great deal of lookups, and has the potential to be optimized further.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [license](license) file for details.
 
 ## Acknowledgments
 * Social Security Administration
-* US Census Bureau
+* US Census Bureau / FiveThirtyEight
