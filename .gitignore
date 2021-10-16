@@ -4,3 +4,8 @@ data/social security - first/.DS_Store
 *.icloud
 namecrawler/data/__MACOSX/._names.sqlite
 namecrawler/data/names.sqlite
+venv/
+.iws
+workspace.xml
+tasks.xml
+.idea/

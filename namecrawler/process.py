@@ -26,21 +26,17 @@ def race(name_str):
     cursor = conn.cursor()
     cursor.execute(
         'SELECT pctwhite, pctblack, pctapi, pctaian, pct2prace, pcthispanic FROM surnames WHERE name=?', [last_name])
-    try:
-        race = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        race_prob = {}
-        race_prob['White'] = race[0]
-        race_prob['Black'] = race[1]
-        race_prob['Asian/Pacific Islander'] = race[2]
-        race_prob['American Indian / Alaskan Native'] = race[3]
-        race_prob['Two or More Races'] = race[4]
-        race_prob['Hispanic'] = race[5]
-        max_race = max(race_prob.items(), key=operator.itemgetter(1))[0]
-        return max_race, race_prob[max_race] + "%"
-    except:
-        pass
+    race = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    race_prob = {'White': race[0],
+                 'Black': race[1],
+                 'Asian/Pacific Islander': race[2],
+                 'American Indian / Alaskan Native': race[3],
+                 'Two or More Races': race[4],
+                 'Hispanic': race[5]}
+    max_race = max(race_prob.items(), key=operator.itemgetter(1))[0]
+    return max_race, race_prob[max_race] + "%"
 
 
 def age(name_str):
@@ -50,22 +46,19 @@ def age(name_str):
     cursor = conn.cursor()
     cursor.execute(
         'SELECT year, max(occurences) FROM first WHERE first=?', [first_name])
-    try:
-        age_lookup = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        print(age_lookup[0])
-        age = int(date.today().year) - int(age_lookup[0])
-        return age, int(age_lookup[0])
-    except:
-        pass
+    age_lookup = cursor.fetchone()
+    cursor.close()
+    conn.close()
+    print(age_lookup[0])
+    age = int(date.today().year) - int(age_lookup[0])
+    return age, int(age_lookup[0])
 
 
-def sex(name_str):
+def sex():
     database_unzip()
     return 0
 
 
-def crawler(str):
+def crawler():
     database_unzip()
     return 0

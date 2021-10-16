@@ -1,4 +1,4 @@
-# namecrawler beta
+# namecrawler
 
 A Python library for finding names in strings and approximating other data.
 
@@ -35,7 +35,9 @@ This is found by looking up a first name, and seeing which of M/F is higher in r
 Example code:
 
 ```
-
+from namecrawler.process import race
+name = "John Smith"
+print(name, race(name))
 ```
 
 ## Limitations
