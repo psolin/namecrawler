@@ -1,11 +1,29 @@
-
-data/social security - first/.DS_Store
-.DS_Store
-*.icloud
-namecrawler/data/__MACOSX/._names.sqlite
+# Database (too large for GitHub, distributed as zip)
 namecrawler/data/names.sqlite
+namecrawler/data/names_optimized.sqlite
+
+# Python
 venv/
-.iws
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.iws
 workspace.xml
 tasks.xml
-.idea/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+__MACOSX/
+*.icloud
